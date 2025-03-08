@@ -40,6 +40,22 @@ While BLoC excels in large, complex apps, Riverpod shines in simplicity:
 git clone https://github.com/Myrat204209/riverpod_study.git
 cd riverpod-learning
 flutter run
+
+flutter pub add hooks_riverpod
+flutter pub add flutter_hooks
+flutter pub add riverpod_annotation
+flutter pub add dev:riverpod_generator
+flutter pub add dev:build_runner
+flutter pub add dev:custom_lint
+flutter pub add dev:riverpod_lint
+flutter pub add freezed_annotation
+flutter pub add dev:build_runner
+flutter pub add dev:freezed
+flutter pub add json_annotation
+flutter pub add dev:json_serializable
+
+dart run build_runner watch -d -v
+
 ```  
 
 ---
