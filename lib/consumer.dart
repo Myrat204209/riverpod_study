@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'activity.dart';
+import 'provider.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
