@@ -9,8 +9,9 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer(builder: (context, ref, child) {
-       // Read the activityProvider. This will start the network request
+    return Consumer(
+      builder: (context, ref, child) {
+        // Read the activityProvider. This will start the network request
         // if it wasn't already started.
         // By using ref.watch, this widget will rebuild whenever the
         // the activityProvider updates. This can happen when:
@@ -18,10 +19,14 @@ class Home extends StatelessWidget {
         // - The request was refreshed
         // - The result was modified locally (such as when performing side-effects)
         // ...
-        final AsyncValue<Activity> activity = ref.watch(activityProvider);
+        final AsyncValue<Activity> activity = ref.watch(
+          // The provider is now a function expecting the activity type.
+          // Let's pass a constant string for now, for the sake of simplicity.
+          activityProvider('recreational'),
+        );
 
         return Center(
-            /// Since network-requests are asynchronous and can fail, we need to
+          /// Since network-requests are asynchronous and can fail, we need to
           /// handle both error and loading states. We can use pattern matching for this.
           /// We could alternatively use `if (activity.isLoading) { ... } else if (...)`
           child: switch (activity) {
@@ -29,8 +34,8 @@ class Home extends StatelessWidget {
             AsyncError() => const Text('Oops, something unexpected happened'),
             _ => const CircularProgressIndicator(),
           },
-
         );
-    });
+      },
+    );
   }
 }

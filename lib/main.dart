@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:riverpod_app/todo_page.dart';
+import 'package:riverpod_app/chapter-1/home_page.dart';
 
 void main() {
   runApp(ProviderScope(child: MyApp()));
@@ -21,7 +21,7 @@ class MyApp extends ConsumerWidget {
           centerTitle: true,
           backgroundColor: Colors.deepPurple,
         ),
-        body: TodoPage(),
+        body: Home(),
       ),
     );
   }
